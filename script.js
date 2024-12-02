@@ -1,4 +1,53 @@
-// Code for ToDo List
+/* Horizontal Menu Scrolling Operation */
+const sCont = document.querySelector(".menus-container");
+const hScroll = document.querySelector(".horizontal-scroll");
+
+let currentScrollPosition = 0;
+const scrollAmount = 300; // Adjusting the increment for smoother scrolling
+
+// Calculating the maximum scroll based on the container's dimensions
+let maxScroll = -sCont.offsetWidth + hScroll.offsetWidth;
+
+function scrollHorizontally(direction) {
+    if (direction === 'left') {
+        // Scrolling right (move left)
+        currentScrollPosition += scrollAmount; 
+        if (currentScrollPosition > 0) {
+            // Preventing overscrolling to the left
+            currentScrollPosition = 0; 
+        }
+    } else if (direction === 'right') {
+        // Scrolling left (elements move right)
+        currentScrollPosition -= scrollAmount; 
+        if (currentScrollPosition < maxScroll) {
+            // Preventing overscrolling to the right
+            currentScrollPosition = maxScroll; 
+        }
+    }
+    
+    // Applying the scroll with smooth transition
+    sCont.style.transition = "left 0.5s ease-in-out";
+    sCont.style.left = currentScrollPosition + "px";
+}
+
+// Adding Active Links in Horizontal Menus when selected
+const menuItems = document.querySelectorAll('.menu-name');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove 'active' class from all items
+        menuItems.forEach(i => i.classList.remove('active'));
+
+        // Add 'active' class to the clicked item
+        item.classList.add('active');
+    });
+});
+
+// Adding event listeners to buttons
+document.querySelector('.left-btn').addEventListener('click', () => scrollHorizontally('left'));
+document.querySelector('.right-btn').addEventListener('click', () => scrollHorizontally('right'));
+
+/* Code for ToDo List */
 const addButton = document.getElementById('addTask');
 const updateButton = document.getElementById('updateTask');
 const taskInput = document.getElementById('taskInput');
@@ -127,7 +176,7 @@ function loadTasks() {
 addButton.addEventListener('click', addTask);
 updateButton.addEventListener('click', updateTask);
 
-// Code for Slot Machine
+/* Code for Slot Machine */
 const symbols = ['🍒', '🍋', '🍉', '🍇', '🍓', '🍊'];
 const fruit1 = document.getElementById('fruit1');
 const fruit2 = document.getElementById('fruit2');
