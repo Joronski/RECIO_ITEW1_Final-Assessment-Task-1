@@ -583,6 +583,26 @@ li:hover {
     letter-spacing: 2px;
 }
 
+.card {
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.img-box img {
+    border-radius: 50%;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
 .profile {
     margin-top: 25px;
 }
@@ -594,23 +614,22 @@ li:hover {
 }
 
 .profile .name {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: bold;
-    margin-top: 15px;
 }
 
 .profile .role {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .social-icons {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
     gap: 15px; 
 }
 
@@ -622,6 +641,7 @@ li:hover {
     text-decoration: none;
     color: #d9534f; 
     transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 24px;
 }
 
 .img-responsive {
