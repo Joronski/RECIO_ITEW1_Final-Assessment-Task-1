@@ -33,8 +33,6 @@
         <header class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">
-                    <img src="icon/RECIO Logo.png" alt="RECIO's Logo" width="150" height="75" class="d-inline-block align-text-top">
-
                     <img src="icon/airbnb-logo.png" alt="RECIO's Logo" width="75" height="75" class="d-inline-block align-text-top">
                 </a>
 
@@ -48,10 +46,23 @@
                         </li>
                     </ul>
 
-                    <form class="d-flex" role="search">
-                        <input type="text" class="form-control me-2" type="search" placeholder="Where" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <div class="nav-container">
+                        <button class="custom-button">Airbnb your home</button>
+                        
+                        <div class="icon-container">
+                            <!-- Globe Icon -->
+                            <button class="icon-button globe">
+                                <i class="fa-solid fa-globe"></i>
+                            </button>
+                            
+                            <!-- Hamburger Menu Icon and User Icon -->
+                            <button class="icon-button menu-icon">
+                                <i class="fa-solid fa-bars"></i>
+                                <i class="fa-solid fa-circle-user"></i>
+                            </button>
+                        </div>
+                    </div>
+
 
                     <div class="d-flex align-items-center">
                         <a href="#" class="nav-link">
@@ -62,6 +73,25 @@
                 </div>
             </div>
         </header>
+
+        <!-- Search Bar Section -->
+        <section class="search-bar-section">
+            <form class="d-flex" role="search">
+                <input type="text" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <div class="filter-and-tax-buttons">
+                <button class="filter-button">
+                    <i class="fa-solid fa-filter"></i>
+                    Filters
+                </button>
+                <div class="tax-toggle">
+                    <input type="checkbox" id="tax-toggle" name="tax-toggle">
+                    <label for="tax-toggle">Display total before taxes</label>
+                </div>
+            </div>
+        </section>
 
         <!-- Horizontal Menu -->
         <section class="horizontal-menu-container">
@@ -221,21 +251,12 @@
                     </div>
                 </div>
             </div>
-
-            <div class="filter-and-tax-buttons">
-                <button class="filter-button">
-                    <i class="fa-solid fa-filter"></i>
-                    Filters
-                </button>
-                <div class="tax-toggle">
-                    <input type="checkbox" id="tax-toggle" name="tax-toggle">
-                    <label for="tax-toggle">Display total before taxes</label>
-                </div>
-            </div>
         </section>
 
+
+
         <!-- Todo List -->
-        <section class="todo-container">
+        <!-- <section class="todo-container">
             <h1 class="todo-title">What you are up to? List it down!</h1>
     
             <input type="text" id="taskInput" placeholder="Add a task">
@@ -243,15 +264,13 @@
             <button id="updateTask">Update</button>
             <button id="deleteAllTasks">Delete All</button>
 
-            <ul id="taskList"> 
-                <!-- Task Contents --> 
-            </ul>
+            <ul id="taskList"></ul>
 
             <p id="taskCount">Total Tasks: 0</p>
-        </section>
+        </section> -->
 
         <!-- Slot Machine -->
-        <section class="slot-machine">
+        <!-- <section class="slot-machine">
             <h1 class="slot-machine-title">Spin Now to get a Free Experience!</h1>
             <div class="token-display">
                 Tokens: <span id="tokenCount">20</span>
@@ -270,7 +289,7 @@
                 <button id="retryButton">Retry</button>
             </div>
             <div id="message" class="message"></div>
-        </section>
+        </section> -->
 
         <!-- Our Team Section -->
 		<section class="teams-section">
@@ -282,7 +301,7 @@
                     <!-- Profile #1 - Alexa -->
                     <div class="col-md-3 text-center profile">
                         <div class="img-box">
-                            <img src="img/alexa.png" alt="" class="img-responsive" width="150" height="150">
+                            <img src="img/alexa.png" alt="Alexa" class="img-responsive" width="150" height="150">
 
                             <ul class="social-icons">
                                 <a href="#"><li><i class="fa-brands fa-facebook"></i></li></a>
@@ -299,12 +318,12 @@
                     <!-- Profile #2 - Klarenz -->
                     <div class="col-md-3 text-center profile">
                         <div class="img-box">
-                            <img src="img/klarenz.png" alt="" class="img-responsive" width="150" height="150">
+                            <img src="img/klarenz.png" alt="Klarenz" class="img-responsive" width="150" height="150">
 
                             <ul class="social-icons">
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <a href="#"><li><i class="fa-brands fa-facebook"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-x-twitter"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-linkedin"></i></li></a>
                             </ul>
                         </div>
 
@@ -316,12 +335,12 @@
                     <!-- Profile #3 - Joron -->
                     <div class="col-md-3 text-center profile">
                         <div class="img-box">
-                            <img src="img/joron.png" alt="" class="img-responsive" width="150" height="150">
+                            <img src="img/joron.png" alt="Joron" class="img-responsive" width="150" height="150">
 
                             <ul class="social-icons">
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <a href="#"><li><i class="fa-brands fa-facebook"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-x-twitter"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-linkedin"></i></li></a>
                             </ul>
                         </div>
 
@@ -333,12 +352,12 @@
                     <!-- Profile #4 - Joshua -->
                     <div class="col-md-3 text-center profile">
                         <div class="img-box">
-                            <img src="img/joshua.png" alt="" class="img-responsive" width="150" height="150">
+                            <img src="img/joshua.png" alt="Joshua" class="img-responsive" width="150" height="150">
 
                             <ul class="social-icons">
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <a href="#"><li><i class="fa-brands fa-facebook"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-x-twitter"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-linkedin"></i></li></a>
                             </ul>
                         </div>
 
@@ -350,12 +369,12 @@
                     <!-- Profile #5 - Ranon -->
                     <div class="col-md-3 text-center profile">
                         <div class="img-box">
-                            <img src="img/ranon.png" alt="" class="img-responsive" width="150" height="150">
+                            <img src="img/ranon.png" alt="Resheena" class="img-responsive" width="150" height="150">
 
                             <ul class="social-icons">
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <a href="#"><li><i class="fa-brands fa-facebook"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-x-twitter"></i></li></a>
+                                <a href="#"><li><i class="fa-brands fa-linkedin"></i></li></a>
                             </ul>
                         </div>
 
@@ -366,6 +385,78 @@
                 </div>
             </div>
 		</section>
+
+        <!-- Footer Section -->
+        <footer class="footer-section bg-dark text-light py-5">
+            <div class="container">
+                <!-- Footer Brand Section -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Airbnb Inspired Layout Replication - ITEW1</h4>
+                    </div>
+                </div>
+
+                <hr class="footer-divider border-light">
+
+                <!-- Footer Navigation Section -->
+                <div class="row text-center text-md-start">
+                    <div class="col-md-3">
+                        <h5 class="footer-heading">Support</h5>
+                        <ul class="list-unstyled">
+                            <li>Help Center</li>
+                            <li>AirCover</li>
+                            <li>Anti-discrimination</li>
+                            <li>Disability support</li>
+                            <li>Cancellation options</li>
+                            <li>Report neighborhood concern</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="footer-heading">Hosting</h5>
+                        <ul class="list-unstyled">
+                            <li>Airbnb your home</li>
+                            <li>AirCover for Hosts</li>
+                            <li>Hosting resources</li>
+                            <li>Community forum</li>
+                            <li>Hosting responsibly</li>
+                            <li>Airbnb-friendly apartments</li>
+                            <li>Join a free Hosting class</li>
+                            <li>Find a co‑host</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="footer-heading">Airbnb</h5>
+                        <ul class="list-unstyled">
+                            <li>Newsroom</li>
+                            <li>New features</li>
+                            <li>Careers</li>
+                            <li>Investors</li>
+                            <li>Gift cards</li>
+                            <li>Airbnb.org emergency stays</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="footer-heading">Output Made by</h5>
+                        <div class="d-flex justify-content-center justify-content-md-start">
+                            <img src="icon/RECIO Logo.png" alt="RECIO Logo" class="me-2 img-fluid" style="width: 250px;">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="footer-divider border-light">
+
+                <!-- Footer Bottom Section -->
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <p class="mb-2 mb-md-0">GROUP 9 &copy; 2024 | ITEW1 - Responsive Web Design</p>
+                    <ul class="footer-bottom-links">
+						<li><strong>Terms</strong></li>
+						<li><strong>Privacy</strong></li>
+						<li><strong>Your Privacy Choices</strong></li>
+					</ul>
+                </div>
+            </div>
+        </footer>
+
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
