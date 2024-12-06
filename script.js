@@ -253,3 +253,28 @@ spinButton.addEventListener('click', spinReels);
 autoSpinButton.addEventListener('click', startAutoSpin);
 stopAutoSpinButton.addEventListener('click', stopAutoSpin);
 retryButton.addEventListener('click', retryGame);
+
+// Slider Container for UI Components for the content
+document.querySelectorAll('.experience-card').forEach((card) => {
+    const images = card.querySelectorAll('.slider-container img');
+    let currentIndex = 0;
+
+    const showImage = (index) => {
+        images.forEach((img, idx) => {
+            img.style.display = idx === index ? 'block' : 'none';
+        });
+    };
+
+    card.querySelector('.next-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+
+    card.querySelector('.prev-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    // Initialize by showing the first image
+    showImage(currentIndex);
+});

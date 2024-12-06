@@ -385,6 +385,19 @@ header {
     cursor: pointer;
 }
 
+/* Carousel Image Styling */
+.carousel-inner {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
 .experience-card img {
     width: 100%;
     height: 200px;
