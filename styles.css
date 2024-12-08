@@ -449,6 +449,42 @@ header {
     margin-bottom: 20px;
 }
 
+/* Explore styling */
+.explore-section {
+    text-align: center; 
+    margin: 20px auto; 
+    padding: 20px; 
+    border-radius: 10px; 
+    max-width: 600px; 
+}
+
+.explore-title {
+    font-size: 1.5rem; 
+    color: #333; 
+    margin-bottom: 15px; 
+    font-family: 'Arial', sans-serif; 
+}
+  
+.explore-button {
+    background-color: #000; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+  
+.explore-button:hover {
+    background-color: #444; 
+    transform: scale(1.05); 
+}
+
+.explore-button:active {
+    transform: scale(0.95); 
+}
+
 /* To Do Styling */
 .todo-container {
     text-align: center;
@@ -600,7 +636,7 @@ li:hover {
     text-align: center;
     width: 400px;  
     height: 525px; 
-    margin: 0 auto;
+    margin: 60px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -623,6 +659,7 @@ li:hover {
     border: 2px solid #ccc;
     border-radius: 10px;
     display: flex;
+    margin: 10px;
     justify-content: center;
     align-items: center;
     font-size: 2em;
@@ -661,6 +698,82 @@ li:hover {
     color: #28a745;
     font-size: 1.2em;
     margin-top: 10px;
+}
+
+/* Quiz Styles */
+#quiz-app {
+    width: 90%;
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+#question-container {
+    margin-bottom: 20px;
+}
+  
+#question {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+  
+.button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.button:hover {
+    background-color: #0056b3;
+}
+  
+#controls {
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+#controls.show {
+    display: flex;
+}
+  
+#start-btn, #next-btn {
+    padding: 10px 20px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+#start-btn:hover, #next-btn:hover {
+    background-color: #218838;
+}
+  
+.hide {
+    display: none;
+}
+  
+.correct {
+    background-color: #28a745; /* Green color for correct answers */
+    color: white;
+}
+  
+.wrong {
+    background-color: #dc3545; /* Red color for incorrect answers */
+    color: white;
 }
 
 /* Our Teams Styling */
@@ -918,4 +1031,103 @@ li:hover {
 .list-unstyled li:hover {
     color: #282828;
     border-radius: 50px;
+}
+
+/* Mobile Responsiveness Custom */
+@media only screen and (max-width:  1105px) {
+
+    /* Footer Section */
+    .footer-input {
+		width: 15rem;
+	}
+	
+	.footer-store-icon {
+		width: 150px;
+		height: 50px;
+	}
+}
+
+@media only screen and (max-width: 1030px) {
+    /* Footer Section */
+	.footer-icons {
+		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 880px) {
+    /* Footer Section */
+    .footer-brand {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+	
+	.footer-input {
+		width: 100%;
+	}
+	
+	.footer-nav {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.footer-column {
+		margin: 10px 0;
+	}
+	
+	.footer-icons {
+		flex-direction: row;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+	
+	.footer-store-icon {
+		width: 120px;
+		height: 40px;
+		margin: 5px;
+	}
+	
+	.footer-bottom {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.footer-bottom-links {
+		margin-top: 10px;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	
+	.footer-bottom-links li {
+		margin: 5px;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+    /* Footer Section */
+    .footer-container {
+		width: 90%;
+	}
+	
+	.footer-heading {
+		font-size: 1rem;
+	}
+	
+	.footer-list li {
+		font-size: 0.9rem;
+	}
+	
+	.footer-store-icon {
+		width: 100px;
+		height: 35px;
+	}
+	
+	.footer-bottom p {
+		font-size: 0.8rem;
+	}
+	
+	.footer-bottom-links li {
+		font-size: 0.8rem;
+		align-content: center;
+	}
 }

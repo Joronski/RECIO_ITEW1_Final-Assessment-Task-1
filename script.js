@@ -69,7 +69,7 @@ function addTask() {
     const task = taskInput.value.trim();
 
     if (task) {
-        createTaskElement(task);
+        createTaskElement(task, false); // New tasks are not completed by default
         taskInput.value = '';
         saveTasks();
         updateTaskCount(); // Update count after adding
@@ -106,8 +106,8 @@ function updateTask() {
 addButton.addEventListener('click', addTask);
 updateButton.addEventListener('click', updateTask);
 
-// Create Task Element with checkbox and strikethrough already handled
-function createTaskElement(task) {
+// Create Task Element with checkbox and strikethrough handled
+function createTaskElement(task, completed) {
     const listItem = document.createElement('li');
 
     const checkbox = document.createElement('input');
@@ -118,6 +118,11 @@ function createTaskElement(task) {
     const taskText = document.createElement('span');
     taskText.textContent = task;
     listItem.appendChild(taskText);
+
+    if (completed) {
+        checkbox.checked = true;
+        taskText.style.textDecoration = 'line-through'; // Mark as completed
+    }
 
     checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
@@ -163,18 +168,14 @@ function saveTasks() {
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach(function (task) {
-        createTaskElement(task.text);
-        if (task.completed) {
-            const checkbox = taskList.lastChild.querySelector('.taskCheckbox');
-            checkbox.checked = true;
-            checkbox.nextElementSibling.classList.add('completed');
-        }
+        createTaskElement(task.text, task.completed);
     });
     updateTaskCount();
 }
 
 addButton.addEventListener('click', addTask);
 updateButton.addEventListener('click', updateTask);
+
 
 /* Code for Slot Machine */
 const symbols = ['🍒', '🍋', '🍉', '🍇', '🍓', '🍊'];
@@ -201,7 +202,7 @@ function spinReels() {
         updateTokens(-1);
         checkWin();
     } else {
-        alert('Out of token Please recharge!');
+        alert('Out of token. Please recharge!');
         stopAutoSpin(); 
     }
 }
