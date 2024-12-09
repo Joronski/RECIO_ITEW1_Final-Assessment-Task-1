@@ -432,6 +432,21 @@ header {
     margin-top: 10px;
 }
 
+.icon {
+    font-size: 30px;
+    color: #444;
+    margin-right: 15px;
+}
+
+.experience-price {
+    color: #f05057;
+}
+
+.rating-experience {
+    color: #f05057;
+    margin-bottom: 20px;
+}
+
 /* Explore styling */
 .explore-section {
     text-align: center; 
@@ -439,6 +454,13 @@ header {
     padding: 20px; 
     border-radius: 10px; 
     max-width: 600px; 
+}
+
+.experience-item {
+    display: flex;
+    align-items: center; 
+    justify-content: start;
+    margin-bottom: 20px; 
 }
 
 .explore-title {
@@ -466,6 +488,36 @@ header {
 
 .explore-button:active {
     transform: scale(0.95); 
+}
+
+.event-feature-description {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.event-feature-description h2 {
+    font-size: 18px;
+    margin: 0;
+}
+  
+.event-feature-description p {
+    font-size: 14px;
+    color: #666666;
+}
+  
+.host-info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 20px;
+}
+  
+.host-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 /* To Do Styling */
