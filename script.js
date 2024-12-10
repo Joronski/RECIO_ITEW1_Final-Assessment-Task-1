@@ -176,6 +176,50 @@ function loadTasks() {
 addButton.addEventListener('click', addTask);
 updateButton.addEventListener('click', updateTask);
 
+// Set the maximum character limit
+const MAX_TASK_LENGTH = 45; 
+
+// Add Task function with character limit check
+function addTask() {
+    let task = taskInput.value.trim();
+
+    if (task.length > MAX_TASK_LENGTH) {
+        alert(`Task should be ${MAX_TASK_LENGTH} characters or less.`);
+        return;
+    }
+
+    if (task) {
+        createTaskElement(task, false); // New tasks are not completed by default
+        taskInput.value = '';
+        saveTasks();
+        updateTaskCount(); // Update count after adding
+    } else {
+        alert('Enter a task');
+    }
+}
+
+// Update Task function with character limit check
+function updateTask() {
+    if (selectedTask) {
+        const newText = taskInput.value.trim();
+
+        if (newText.length > MAX_TASK_LENGTH) {
+            alert(`Task should be ${MAX_TASK_LENGTH} characters or less.`);
+            return;
+        }
+
+        if (newText) {
+            selectedTask.querySelector('span').textContent = newText;
+            taskInput.value = '';
+            selectedTask = null; // Clear the selected task
+            saveTasks();
+        } else {
+            alert('Enter a new task text');
+        }
+    } else {
+        alert('Please select a task to update');
+    }
+}
 
 /* Code for Slot Machine */
 const symbols = ['🍒', '🍋', '🍉', '🍇', '🍓', '🍊'];

@@ -594,6 +594,12 @@ li:hover {
 
 .taskText {
     flex: 1; 
+    max-width: calc(100% - 60px); 
+    margin-right: -20px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: inline-block; 
 }
   
 .taskText.completed {
